@@ -1,10 +1,13 @@
 import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import fridgeRouter from "./fridgeRouter";
+import boardRouter from "./boardRouter";
 
-const MainPage = lazy(() => import("../page/mainPage"));
+const MainPage = lazy(() => import("../page/MainPage"));
 const FridgePage = lazy(() => import("../page/fridge/FridgePage"));
 const BoardPage = lazy(() => import("../page/board/BoardPage"));
+
+const NotFoundPage = lazy(() => import("../page/not-found/NotFound"));
 
 const router = createBrowserRouter([
   // Route : RootPage
@@ -34,7 +37,15 @@ const router = createBrowserRouter([
         <BoardPage />
       </Suspense>
     ),
-    children: fridgeRouter(),
+    children: boardRouter(),
+  },
+  {
+    path: "*",
+    element: (
+      <Suspense fallback={<div>로딩 중..</div>}>
+        <NotFoundPage />
+      </Suspense>
+    ),
   },
 ]);
 

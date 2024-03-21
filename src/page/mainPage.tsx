@@ -1,7 +1,11 @@
-import React from "react";
+import BasicLayout from "../layout/BasicLayout";
 
-const mainPage = () => {
-  return <div>mainPage</div>;
+const MainPage = () => {
+  return (
+    <BasicLayout>
+      <div>아아아아</div>
+    </BasicLayout>
+  );
 };
 
-export default mainPage;
+export default MainPage;

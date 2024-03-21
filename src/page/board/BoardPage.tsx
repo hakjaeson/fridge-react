@@ -1,11 +1,11 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
+import BasicLayout from "../../layout/BasicLayout";
 
 const BoardPage = () => {
   return (
-    <div>
+    <BasicLayout>
       <Outlet />
-    </div>
+    </BasicLayout>
   );
 };
 
