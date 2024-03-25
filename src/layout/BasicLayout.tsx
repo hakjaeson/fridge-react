@@ -1,6 +1,6 @@
 import Footer from "../component/layout/Footer";
 import Header from "../component/layout/Header";
-import { LayoutWrapper } from "../style/LayoutStyles";
+import { LayoutWrapper, MainWrapper } from "../style/LayoutStyles";
 import { layout } from "./Layout";
 
 const BasicLayout: React.FC<layout> = ({ children }) => {
@@ -12,7 +12,7 @@ const BasicLayout: React.FC<layout> = ({ children }) => {
           <Header />
         </header>
         {/* @AREA Main */}
-        <main>{children}</main>
+        <MainWrapper>{children}</MainWrapper>
         {/* @AREA Footer */}
         <footer>
           <Footer />

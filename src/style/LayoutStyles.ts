@@ -7,6 +7,14 @@ export const LayoutWrapper = styled.div`
   font-family: "Prentendard";
 `;
 
+// @AREA Main-style
+export const MainWrapper = styled.main`
+  position: relative;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+`;
+
 // @AREA Header-style
 export const HeaderWrapper = styled.div`
   /* position: fixed; */

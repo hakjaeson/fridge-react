@@ -4,6 +4,7 @@ import { getBoard } from "../../api/boardApi";
 import { boardDataInfo } from "../../interface/boardInterface";
 import { c } from "vite/dist/node/types.d-FdqQ54oU";
 import useCustomHook from "../../hook/useCustomHook";
+import { ListTable } from "../../style/board/ListStyle";
 
 const Listpage = () => {
   const { MoveBoardCreate } = useCustomHook();
@@ -36,7 +37,7 @@ const Listpage = () => {
           <button type="submit">검색</button>
         </form>
       </div>
-      <table>
+      <ListTable>
         <thead>
           <tr>
             {tableColunm.map((item, index) => (
@@ -55,7 +56,7 @@ const Listpage = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </ListTable>
 
       <div>
         <button onClick={MoveBoardCreate}>글쓰기</button>
