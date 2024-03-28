@@ -31,3 +31,16 @@ export const postBoard = async ({ postData }: { postData: CreateFormInfo }) => {
     console.log(error);
   }
 };
+
+export const getRead = async () => {
+  try {
+    const response = await axios.get("../src/mock/recipe.json");
+    if (response.status === 200) {
+      return response.data;
+    } else {
+      console.log("error code :", response.status);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
