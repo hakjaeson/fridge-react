@@ -1,8 +1,9 @@
 import React, { Suspense, lazy } from "react";
 import { Navigate } from "react-router-dom";
 
-const LazyListPage = lazy(() => import("../page/board/Listpage"));
 const LazyCreatePage = lazy(() => import("../page/board/CreatePage"));
+const LazyReadPage = lazy(() => import("../page/board/ReadPage"));
+const LazyListPage = lazy(() => import("../page/board/Listpage"));
 // @COMMENT board(게시판 페이지)
 const boardRouter = () => {
   return [
@@ -20,6 +21,14 @@ const boardRouter = () => {
       element: (
         <Suspense fallback={<div>로딩 중..</div>}>
           <LazyCreatePage />
+        </Suspense>
+      ),
+    },
+    {
+      path: "read",
+      element: (
+        <Suspense fallback={<div>로딩 중..</div>}>
+          <LazyReadPage />
         </Suspense>
       ),
     },

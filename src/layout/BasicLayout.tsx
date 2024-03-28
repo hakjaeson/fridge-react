@@ -1,5 +1,5 @@
-import Footer from "../component/layout/Footer";
-import Header from "../component/layout/Header";
+import Footer from "../components/layout/Footer";
+import Header from "../components/layout/Header";
 import { LayoutWrapper, MainWrapper } from "../style/LayoutStyles";
 import { layout } from "./Layout";
 

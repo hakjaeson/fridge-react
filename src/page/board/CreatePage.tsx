@@ -4,6 +4,7 @@ import { CreateFormInfo } from "../../interface/boardInterface";
 import { ChangeEvent, useState } from "react";
 import { postBoard } from "../../api/boardApi";
 import dayjs from "dayjs";
+import { InputWrap } from "../../style/board/ListStyle";
 
 const CreatePage = () => {
   const { MoveBoardList } = useCustomHook();
@@ -15,6 +16,7 @@ const CreatePage = () => {
   const initState: CreateFormInfo = {
     title: "",
     content: "",
+    ingredient: [""],
     writer: "hakjaeson",
     createDate: nowdate,
   };
@@ -44,16 +46,23 @@ const CreatePage = () => {
   };
   return (
     <div>
-      <div>
+      <InputWrap>
         <form>
-          글제목
+          <label htmlFor="title">글제목</label>
           <input
             type="text"
             name="title"
             value={postData.title}
             onChange={e => handleChangeFormData(e)}
           />
-          글내용
+          <label htmlFor="ingredient">재료</label>
+          <input
+            type="text"
+            name="ingredient"
+            value={postData.ingredient}
+            onChange={e => handleChangeFormData(e)}
+          />
+          <label htmlFor="content"></label>
           <textarea
             name="content"
             value={postData.content}
@@ -63,7 +72,7 @@ const CreatePage = () => {
             작성완료
           </button>
         </form>
-      </div>
+      </InputWrap>
     </div>
   );
 };

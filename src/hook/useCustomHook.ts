@@ -4,6 +4,11 @@ const useCustomHook = () => {
   // @AREA Hooks
   const navigate = useNavigate();
 
+  // @FN Root
+  const MoveToRoot = () => {
+    navigate("/");
+  };
+
   // @FN Board-create
   const MoveBoardCreate = () => {
     navigate("/board/create");
@@ -26,6 +31,7 @@ const useCustomHook = () => {
     navigate(-1);
   };
   return {
+    MoveToRoot,
     MoveBoardList,
     MoveFridgeList,
     MoveBoardCreate,

@@ -20,10 +20,11 @@ export const HeaderWrapper = styled.div`
   /* position: fixed; */
   width: 100%;
   height: 80px;
-  background-color: pink;
+  /* background-color: pink; */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid black;
 
   .logo-wrapper {
     padding: 0px 30px;

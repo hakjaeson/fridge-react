@@ -1,9 +1,13 @@
 import useCustomHook from "../../hook/useCustomHook";
+import { MoveButton } from "../../style/board/ListStyle";
 import { HeaderWrapper } from "../../style/LayoutStyles";
 
 const Header = () => {
-  const { MoveBoardList, MoveFridgeList } = useCustomHook();
+  const { MoveBoardList, MoveFridgeList, MoveToRoot } = useCustomHook();
 
+  const handleClickHome = () => {
+    MoveToRoot();
+  };
   const handleClickBoard = () => {
     MoveBoardList();
   };
@@ -13,12 +17,12 @@ const Header = () => {
   return (
     <HeaderWrapper>
       {/* <div>여기엔 뭐적냐</div> */}
-      <div className="logo-wrapper">
+      <div className="logo-wrapper" onClick={handleClickHome}>
         <img src={"/images/logo.svg"} alt="로고" />
       </div>
-      <div>
-        <button onClick={handleClickFridge}>냉장고</button>
-        <button onClick={handleClickBoard}>메모장</button>
+      <div style={{ display: "flex", gap: "1rem", marginRight: "1rem" }}>
+        <MoveButton onClick={handleClickFridge}>냉장고</MoveButton>
+        <MoveButton onClick={handleClickBoard}>메모장</MoveButton>
       </div>
     </HeaderWrapper>
   );

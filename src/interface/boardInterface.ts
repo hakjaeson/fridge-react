@@ -9,6 +9,7 @@ export interface boardDataInfo {
 export interface CreateFormInfo {
   title: string;
   content: string;
+  ingredient: string[];
   writer: string;
   createDate: string;
 }
